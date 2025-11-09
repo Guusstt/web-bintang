@@ -1,24 +1,60 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion'; // Import AnimatePresence
+import heroImage1 from '../assets/hero1.jpg'; // Sesuaikan path-nya
+import heroImage2 from '../assets/hero2.png';
+import heroImage3 from '../assets/hero3.jpeg';
+
+// Ganti URL ini dengan tautan gambar resolusi tinggi milik TK Bintang
+const heroBackgroundImages = [
+  heroImage1,
+  heroImage2,
+  heroImage3,
+  // Tambahkan lebih banyak URL gambar di sini
+];
 
 const HeroSection = () => {
-  // Ganti placeholder URL ini dengan tautan gambar resolusi tinggi milik TK Bintang
-  const backgroundImageUrl = 'https://imgs.search.brave.com/ZPT1rVPrBAiLazgqAQWdhBDnGC5yfr3fobP0grd4l54/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/a2VtZGlrYnVkLmNv/LmlkL2RhdGEvd3At/Y29udGVudC91cGxv/YWRzLzIwMjIvMTEv/Zm90by1kYW4tYWt0/aXZpdGFzLXRrLWRp/LWplcGFyYS0xNjY3/NTM0ODk0LmpwZWc'; 
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    // Fungsi untuk mengubah gambar setiap beberapa detik
+    const intervalId = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        (prevIndex + 1) % heroBackgroundImages.length
+      );
+    }, 5000); // Ganti 5000 dengan durasi (dalam ms) antar gambar (misal: 5 detik)
+
+    // Membersihkan interval saat komponen di-unmount
+    return () => clearInterval(intervalId);
+  }, []); // Hanya berjalan sekali saat komponen mount
+
+  const currentImageUrl = heroBackgroundImages[currentImageIndex];
 
   return (
     <section 
       id="beranda" 
-      className="relative pt-20 pb-32 overflow-hidden" 
+      className="relative pt-20 pb-32 overflow-hidden h-screen flex items-center justify-center" // Tambahkan h-screen dan flex properties
     >
+      {/* <section 
+      id="beranda" 
+      className="relative pt-20 pb-32 overflow-hidden" // h-screen dan flex properties dihapus
+    > */}
       
-      {/* 2. LAPISAN GAMBAR BACKGROUND DARI URL */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center" // Kelas Tailwind
-        style={{ backgroundImage: `url('${backgroundImageUrl}')` }} // Menggunakan URL eksternal
-        aria-hidden="true" // Untuk aksesibilitas
-      >
-        {/* LAPISAN OVERLAY (bg-purple-900 opacity-60) untuk meningkatkan kontras teks */}
-        <div className="absolute inset-0 bg-purple-900 opacity-60"></div> 
-      </div>
+      {/* 2. LAPISAN GAMBAR BACKGROUND DARI URL DENGAN ANIMASI */}
+      <AnimatePresence> {/* Untuk animasi keluar masuk komponen */}
+        <motion.div 
+          key={currentImageIndex} // Kunci unik untuk setiap gambar, penting untuk AnimatePresence
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url('${currentImageUrl}')` }}
+          aria-hidden="true"
+          initial={{ opacity: 0 }} // Mulai dari transparan
+          animate={{ opacity: 1 }} // Animasi menjadi terlihat
+          exit={{ opacity: 0 }} // Animasi kembali transparan saat keluar
+          transition={{ duration: 1.5, ease: "easeInOut" }} // Durasi transisi fade
+        >
+          {/* LAPISAN OVERLAY (bg-purple-900 opacity-60) */}
+          <div className="absolute inset-0 bg-purple-900 opacity-60"></div> 
+        </motion.div>
+      </AnimatePresence>
 
       {/* 3. KONTEN UTAMA (Di atas overlay, z-10) */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center relative z-10 text-white">
@@ -39,7 +75,7 @@ const HeroSection = () => {
           </a>
         </div>
 
-        {/* Ilustrasi/Gambar */}
+        {/* Ilustrasi/Gambar (Kosong sesuai kode awal Anda) */}
         <div className="md:w-1/2 flex justify-center">
         </div>
       </div>

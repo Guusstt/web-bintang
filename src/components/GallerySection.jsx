@@ -1,6 +1,7 @@
 import React from 'react';
+import { motion } from 'framer-motion'; // 1. Import motion
 
-// Array URL gambar placeholder (Ganti dengan link gambar kegiatan nyata!)
+// Array URL gambar placeholder
 const galleryImages = [
   'https://via.placeholder.com/600x400?text=Kegiatan+Bermain',
   'https://via.placeholder.com/600x400?text=Kelas+Seni',
@@ -15,29 +16,53 @@ const GallerySection = () => {
     <section id="galeri" className="py-20 bg-yellow-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         
-        {/* Judul Bagian */}
-        <h2 className="text-4xl font-extrabold text-gray-900 mb-4">
+        {/* Judul Bagian - Animasi Fade-in dari bawah */}
+        <motion.h2 
+          className="text-4xl font-extrabold text-gray-900 mb-4"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6 }}
+        >
           Galeri Keceriaan
-        </h2>
-        <p className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
+        </motion.h2>
+        
+        {/* Paragraf - Animasi Fade-in dari bawah dengan delay */}
+        <motion.p 
+          className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           Lihatlah momen-momen kebahagiaan dan pembelajaran anak-anak kami di TK Bintang.
-        </p>
+        </motion.p>
 
         {/* Tata Letak Grid Responsif */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6">
           {galleryImages.map((imageUrl, index) => (
-            <div 
+            
+            // 2. Ganti 'div' menjadi 'motion.div' dan tambahkan properti animasi
+            <motion.div 
               key={index} 
-              className="overflow-hidden rounded-lg shadow-md transition duration-300 hover:shadow-xl transform hover:scale-[1.02]"
+              className="overflow-hidden rounded-lg shadow-md hover:shadow-xl transform hover:scale-[1.02]" // Hapus 'transition' & 'duration-300' dari sini
+              
+              initial={{ opacity: 0, scale: 0.8, y: 50 }} // Mulai dari transparan, 80% ukuran, & 50px di bawah
+              whileInView={{ opacity: 1, scale: 1, y: 0 }} // Animasi menjadi terlihat, 100% ukuran, & di posisi Y
+              viewport={{ once: true, amount: 0.5 }} // Picu sekali saat 50% terlihat
+              transition={{ 
+                duration: 0.5, 
+                delay: index * 0.1, // 3. INI KUNCINYA! Delay berdasarkan index
+                ease: "easeOut" 
+              }}
             >
-              {/* Gambar akan menyesuaikan diri dengan wadah grid */}
               <img 
                 src={imageUrl} 
                 alt={`Kegiatan TK Bintang ${index + 1}`} 
                 className="w-full h-auto object-cover aspect-video"
                 loading="lazy"
               />
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

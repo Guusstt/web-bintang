@@ -12,6 +12,8 @@ import AboutUs from './components/AboutUs';
 import OrganizationAndTeachers from './components/OrganizationAndTeachers';
 import GallerySection from './components/GallerySection';
 import TestimonialCTA from './components/TestimonialCTA';
+import WhatsAppButton from './components/WhatsAppButton';
+import StatsSection from './components/StatsSection';
 
 // Import Halaman Terpisah
 import RegistrationPage from './pages/RegistrationPage'; // <-- Halaman Pendaftaran
@@ -56,13 +58,16 @@ const App = () => {
             <AboutUs />           
             <OrganizationAndTeachers />
             <GallerySection />
-            <TestimonialCTA onRegisterClick={navigateToRegistration} /> {/* Tambahkan props di sini */}
+            <StatsSection /> 
+            <TestimonialCTA onRegisterClick={navigateToRegistration} />
+           {/* Tambahkan props di sini */}
             {/* Note: ContactForm tidak perlu ditampilkan jika sudah ada RegistrationPage */}
           </>
         )}
       </main>
       
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };
