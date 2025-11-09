@@ -21,11 +21,9 @@ const RegistrationPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Di sini kamu akan mengirimkan data pendaftaran ke backend
     console.log('Data Pendaftaran Terkirim:', formData);
     alert('Pendaftaran Awal Berhasil! Tim kami akan menghubungi Anda dalam 1x24 jam untuk langkah selanjutnya.');
-    
-    // Reset formulir setelah submit
+
     setFormData({ 
       parentName: '', 
       parentEmail: '', 
@@ -39,13 +37,10 @@ const RegistrationPage = () => {
   };
 
   return (
-    // <div className="min-h-screen flex flex-col"> {/* Jika kamu ingin menyertakan Navbar/Footer */}
-    //   <Navbar /> 
-      
+   
       <main className="bg-yellow-50 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          {/* Header Pendaftaran */}
+
           <div className="text-center mb-12">
             <h1 className="text-5xl font-extrabold text-pink-600 mb-2">
               Formulir Pendaftaran Siswa Baru
@@ -55,17 +50,14 @@ const RegistrationPage = () => {
             </p>
           </div>
 
-          {/* Kotak Formulir Utama */}
           <div className="bg-white p-8 md:p-12 rounded-xl shadow-2xl border-t-8 border-yellow-500">
             <form onSubmit={handleSubmit} className="space-y-8">
-              
-              {/* === Bagian 1: Data Orang Tua === */}
+
               <h2 className="text-2xl font-bold text-gray-800 border-b pb-2 border-pink-100">
                 1. Data Orang Tua/Wali
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                
-                {/* Nama Orang Tua */}
+
                 <InputGroup 
                   label="Nama Lengkap Orang Tua/Wali" 
                   type="text" 
@@ -74,8 +66,7 @@ const RegistrationPage = () => {
                   onChange={handleChange} 
                   required
                 />
-                
-                {/* Email */}
+
                 <InputGroup 
                   label="Email Aktif" 
                   type="email" 
@@ -84,8 +75,7 @@ const RegistrationPage = () => {
                   onChange={handleChange} 
                   required
                 />
-                
-                {/* Telepon */}
+
                 <InputGroup 
                   label="Nomor Telepon/HP" 
                   type="tel" 
@@ -96,13 +86,11 @@ const RegistrationPage = () => {
                 />
               </div>
 
-              {/* === Bagian 2: Data Calon Siswa === */}
               <h2 className="text-2xl font-bold text-gray-800 border-b pb-2 border-pink-100 pt-4">
                 2. Data Calon Siswa
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                
-                {/* Nama Anak */}
+
                 <InputGroup 
                   label="Nama Lengkap Calon Siswa" 
                   type="text" 
@@ -111,8 +99,7 @@ const RegistrationPage = () => {
                   onChange={handleChange} 
                   required
                 />
-                
-                {/* Tanggal Lahir */}
+
                 <InputGroup 
                   label="Tanggal Lahir Anak" 
                   type="date" 
@@ -122,7 +109,6 @@ const RegistrationPage = () => {
                   required
                 />
 
-                {/* Jenis Kelamin */}
                 <SelectGroup 
                   label="Jenis Kelamin" 
                   name="childGender" 
@@ -131,7 +117,6 @@ const RegistrationPage = () => {
                   options={['Laki-laki', 'Perempuan']}
                 />
 
-                {/* Jenjang Pilihan */}
                 <SelectGroup 
                   label="Jenjang Pendidikan yang Dipilih" 
                   name="educationLevel" 
@@ -142,7 +127,6 @@ const RegistrationPage = () => {
                 />
               </div>
 
-              {/* === Bagian 3: Alamat === */}
               <h2 className="text-2xl font-bold text-gray-800 border-b pb-2 border-pink-100 pt-4">
                 3. Informasi Lain
               </h2>
@@ -155,7 +139,6 @@ const RegistrationPage = () => {
                 required
               />
 
-              {/* Tombol Submit */}
               <div className="pt-6">
                 <button
                   type="submit"

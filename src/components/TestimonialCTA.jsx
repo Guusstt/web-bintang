@@ -14,9 +14,8 @@ const testimonials = [
   },
 ];
 
-// Terima props onRegisterClick
 const TestimonialCTA = ({ onRegisterClick }) => {
-    // Observer untuk animasi CTA
+
     const { ref, inView } = useInView({
         triggerOnce: true,
         threshold: 0.1,
@@ -26,12 +25,10 @@ const TestimonialCTA = ({ onRegisterClick }) => {
     <section className="py-20 bg-pink-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         
-        {/* Bagian Testimoni */}
         <h2 className="text-4xl font-extrabold text-gray-900 mb-12">
           Apa Kata Orang Tua Kami?
         </h2>
 
-        {/* Grid Testimoni */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
           {testimonials.map((t, index) => (
             <div 
@@ -51,7 +48,6 @@ const TestimonialCTA = ({ onRegisterClick }) => {
           ))}
         </div>
 
-        {/* Bagian Call to Action Akhir - Animasi Zoom */}
         <div 
             ref={ref}
             className={`bg-pink-600 p-10 rounded-xl shadow-2xl transition-all duration-700 ${
@@ -64,13 +60,14 @@ const TestimonialCTA = ({ onRegisterClick }) => {
           <p className="text-xl text-pink-100 mb-8">
             Jangan lewatkan kesempatan untuk memberikan awal terbaik bagi masa depan mereka.
           </p>
-          {/* PERBAIKAN: Menggunakan <button> dengan onClick handler */}
-          <button
+
+          {/* tombol daftar */}
+          {/* <button
             onClick={onRegisterClick} 
             className="inline-block bg-yellow-300 hover:bg-yellow-400 text-pink-700 font-extrabold text-xl py-4 px-12 rounded-full transition duration-300 transform hover:scale-105 shadow-2xl"
           >
             Daftar Sekarang Juga!
-          </button>
+          </button> */}
         </div>
       </div>
     </section>

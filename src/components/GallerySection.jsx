@@ -1,7 +1,6 @@
 import React from 'react';
-import { motion } from 'framer-motion'; // 1. Import motion
+import { motion } from 'framer-motion'; 
 
-// Array URL gambar placeholder
 const galleryImages = [
   'https://via.placeholder.com/600x400?text=Kegiatan+Bermain',
   'https://via.placeholder.com/600x400?text=Kelas+Seni',
@@ -16,7 +15,6 @@ const GallerySection = () => {
     <section id="galeri" className="py-20 bg-yellow-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         
-        {/* Judul Bagian - Animasi Fade-in dari bawah */}
         <motion.h2 
           className="text-4xl font-extrabold text-gray-900 mb-4"
           initial={{ opacity: 0, y: 50 }}
@@ -26,8 +24,7 @@ const GallerySection = () => {
         >
           Galeri Keceriaan
         </motion.h2>
-        
-        {/* Paragraf - Animasi Fade-in dari bawah dengan delay */}
+
         <motion.p 
           className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 50 }}
@@ -38,21 +35,19 @@ const GallerySection = () => {
           Lihatlah momen-momen kebahagiaan dan pembelajaran anak-anak kami di TK Bintang.
         </motion.p>
 
-        {/* Tata Letak Grid Responsif */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6">
           {galleryImages.map((imageUrl, index) => (
-            
-            // 2. Ganti 'div' menjadi 'motion.div' dan tambahkan properti animasi
+
             <motion.div 
               key={index} 
-              className="overflow-hidden rounded-lg shadow-md hover:shadow-xl transform hover:scale-[1.02]" // Hapus 'transition' & 'duration-300' dari sini
+              className="overflow-hidden rounded-lg shadow-md hover:shadow-xl transform hover:scale-[1.02]" 
               
-              initial={{ opacity: 0, scale: 0.8, y: 50 }} // Mulai dari transparan, 80% ukuran, & 50px di bawah
-              whileInView={{ opacity: 1, scale: 1, y: 0 }} // Animasi menjadi terlihat, 100% ukuran, & di posisi Y
-              viewport={{ once: true, amount: 0.5 }} // Picu sekali saat 50% terlihat
+              initial={{ opacity: 0, scale: 0.8, y: 50 }} 
+              whileInView={{ opacity: 1, scale: 1, y: 0 }} 
+              viewport={{ once: true, amount: 0.5 }} 
               transition={{ 
                 duration: 0.5, 
-                delay: index * 0.1, // 3. INI KUNCINYA! Delay berdasarkan index
+                delay: index * 0.1,
                 ease: "easeOut" 
               }}
             >

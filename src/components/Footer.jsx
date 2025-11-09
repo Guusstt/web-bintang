@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="bg-pink-600 text-white py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-          {/* Kolom 1: Info TK */}
+      
           <div>
             <h4 className="text-xl font-bold mb-4">TK Bintang 🌟</h4>
             <p className="text-pink-100 text-sm">
@@ -13,7 +13,6 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Kolom 2: Tautan Cepat */}
           <div>
             <h4 className="text-xl font-bold mb-4">Tautan</h4>
             <ul className="space-y-2">
@@ -23,7 +22,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Kolom 3: Kontak */}
           <div>
             <h4 id="kontak" className="text-xl font-bold mb-4">Hubungi Kami</h4>
             <p className="text-pink-100 text-sm">

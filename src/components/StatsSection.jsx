@@ -2,7 +2,6 @@ import React from 'react';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
 
-// Data untuk statistik
 const statsData = [
   { number: 20, label: 'Total Pendaftar' },
   { number: 100, label: 'Jumlah Peserta Didik' },
@@ -24,13 +23,11 @@ const StatsSection = () => {
         </h2>
         <div className="h-1 w-16 sm:w-20 lg:w-24 bg-yellow-400 mx-auto mb-8 sm:mb-12 lg:mb-16"></div>
 
-        {/* Grid 3 kolom di semua ukuran layar */}
         <div className="grid grid-cols-3 gap-2 sm:gap-6 lg:gap-12">
           
           {statsData.map((stat, index) => (
             <div key={index} className="flex flex-col items-center">
               
-              {/* Lingkaran Statistik - Responsif */}
               <div 
                 className={`
                   w-24 h-24 sm:w-40 sm:h-40 lg:w-56 lg:h-56

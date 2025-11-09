@@ -10,10 +10,10 @@ const WhatsAppButton = () => {
   return (
     <a
       href={whatsappUrl}
-      target="_blank" // Membuka link di tab baru
-      rel="noopener noreferrer" // Praktik keamanan standar untuk target="_blank"
+      target="_blank" 
+      rel="noopener noreferrer" 
       className="fixed bottom-6 right-6 z-50 p-4 bg-green-500 rounded-full text-white text-3xl shadow-lg transition-transform duration-300 hover:scale-110 hover:bg-green-600"
-      aria-label="Chat di WhatsApp" // Untuk aksesibilitas (pembaca layar)
+      aria-label="Chat di WhatsApp" 
     >
       <IoLogoWhatsapp />
     </a>

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 const ContactForm = () => {
-  // State untuk menyimpan data formulir (opsional, tapi disarankan untuk React)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -16,20 +15,16 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Di sini kamu akan menangani pengiriman data
-    // Contoh: Kirim data ke API atau layanan email (misalnya Formspree, Netlify Forms, dll.)
     console.log('Data Formulir Terkirim:', formData);
     alert('Terima kasih! Pesan Anda telah kami terima. Kami akan segera menghubungi Anda.');
-    
-    // Reset formulir
+
     setFormData({ name: '', email: '', phone: '', childName: '', message: '' });
   };
 
   return (
     <section id="kontak" className="py-20 bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Judul Bagian */}
+
         <div className="text-center mb-12">
           <h2 className="text-4xl font-extrabold text-gray-900 mb-4">
             Hubungi TK Bintang
@@ -39,11 +34,9 @@ const ContactForm = () => {
           </p>
         </div>
 
-        {/* Kotak Formulir */}
         <div className="bg-pink-50 p-8 md:p-10 rounded-xl shadow-2xl border-t-8 border-pink-600">
           <form onSubmit={handleSubmit} className="space-y-6">
-            
-            {/* Input Nama dan Email (Dibuat dalam satu baris untuk tampilan desktop) */}
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 text-left mb-1">
@@ -77,7 +70,6 @@ const ContactForm = () => {
               </div>
             </div>
 
-            {/* Input Telepon dan Nama Anak */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-gray-700 text-left mb-1">
@@ -111,7 +103,6 @@ const ContactForm = () => {
             </div>
 
 
-            {/* Textarea Pesan */}
             <div>
               <label htmlFor="message" className="block text-sm font-medium text-gray-700 text-left mb-1">
                 Pesan / Pertanyaan Anda
@@ -127,7 +118,6 @@ const ContactForm = () => {
               ></textarea>
             </div>
 
-            {/* Tombol Submit */}
             <div className="pt-4">
               <button
                 type="submit"

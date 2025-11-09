@@ -1,7 +1,6 @@
 import React from 'react';
-import { useInView } from 'react-intersection-observer'; // <-- Import useInView
+import { useInView } from 'react-intersection-observer'; 
 
-// Data program unggulan TK Bintang
 const programs = [
   {
     icon: '📚', 
@@ -24,17 +23,15 @@ const programs = [
 ];
 
 const ProgramSection = () => {
-  // 1. Definisikan observer untuk Judul (Opsional, tapi bagus untuk kesan awal)
   const { ref: titleRef, inView: titleInView } = useInView({
-    triggerOnce: true, // Hanya animasikan sekali
-    threshold: 0.1,    // Mulai animasi saat 10% elemen terlihat
+    triggerOnce: true, 
+    threshold: 0.1,   
   });
 
   return (
     <section id="program" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         
-        {/* Judul Bagian - Terapkan Animasi Fade-In Top */}
         <div 
           ref={titleRef} 
           className={`transition-all duration-1000 ${
@@ -49,10 +46,9 @@ const ProgramSection = () => {
           </p>
         </div>
 
-        {/* Grid Kartu Program */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {programs.map((program, index) => (
-            <ProgramCard key={index} program={program} index={index} /> // <-- Gunakan komponen Kartu terpisah
+            <ProgramCard key={index} program={program} index={index} /> 
           ))}
         </div>
       </div>
@@ -60,13 +56,11 @@ const ProgramSection = () => {
   );
 };
 
-// 3. Buat Komponen Kartu Terpisah untuk Menerapkan useInView pada Setiap Item
+
 const ProgramCard = ({ program, index }) => {
-  // Definisikan observer untuk setiap kartu
   const { ref, inView } = useInView({
     triggerOnce: true, 
-    threshold: 0.2, // Mulai animasi saat 20% kartu terlihat
-    // Beri delay yang berbeda untuk efek staggered (muncul berurutan)
+    threshold: 0.2, 
     delay: index * 100, 
   });
 

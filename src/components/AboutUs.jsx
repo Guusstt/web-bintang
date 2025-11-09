@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion'; // Import motion dari framer-motion
+import { motion } from 'framer-motion'; 
 import illustrationImage from '../assets/Hanan.png';
 
 const AboutUs = () => {
@@ -8,15 +8,13 @@ const AboutUs = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          
-          {/* Kolom Kiri: Ilustrasi */}
-          {/* Tambahkan motion.div untuk animasi gambar */}
+
           <motion.div
             className="relative pt-20"
-            initial={{ opacity: 0, y: 100 }} // Posisi awal: tersembunyi, 100px ke bawah
-            whileInView={{ opacity: 1, y: 0 }} // Animasi saat masuk viewport: terlihat, kembali ke posisi awal
-            viewport={{ once: true, amount: 0.5 }} // Hanya animasikan sekali, ketika 50% elemen terlihat
-            transition={{ duration: 0.8, ease: "easeOut" }} // Durasi dan jenis transisi
+            initial={{ opacity: 0, y: 100 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true, amount: 0.5 }} 
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="relative p-6 bg-pink-50 rounded-xl shadow-lg">
               <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 max-w-xs w-full">
@@ -25,20 +23,16 @@ const AboutUs = () => {
                   alt="Ilustrasi Hanan" 
                 />
               </div>
-              {/* Tambahkan konten box di sini jika ada */}
               <div className="mt-101">
-                {/* Konten lainnya */}
               </div>
             </div>
           </motion.div>
 
-          {/* Kolom Kanan: Teks Visi & Misi */}
-          {/* Tambahkan motion.div untuk animasi teks */}
           <motion.div
-            initial={{ opacity: 0, x: 100 }} // Posisi awal: tersembunyi, 100px ke kanan
-            whileInView={{ opacity: 1, x: 0 }} // Animasi saat masuk viewport: terlihat, kembali ke posisi awal
-            viewport={{ once: true, amount: 0.5 }} // Hanya animasikan sekali, ketika 50% elemen terlihat
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }} // Durasi, jenis transisi, dan sedikit delay
+            initial={{ opacity: 0, x: 100 }} 
+            whileInView={{ opacity: 1, x: 0 }} 
+            viewport={{ once: true, amount: 0.5 }} 
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }} 
           >
             <h2 className="text-4xl font-extrabold text-gray-900 mb-6">
               Tentang TK Bintang
