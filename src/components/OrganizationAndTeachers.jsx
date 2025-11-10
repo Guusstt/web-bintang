@@ -1,67 +1,72 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
+import bundaLinaImage from '../assets/bulina.jpg';
+import bundaWidImage from '../assets/buwid.jpg';
+import bundaNayaImage from '../assets/bunaya.jpg';
+import bundaNurulImage from '../assets/bunurul.jpg';
+import bundaNurImage from '../assets/bunur.jpg';
+import bundaIstyImage from '../assets/buisty.jpg';
 
-// Data Pengajar/Guru (Data yang kamu berikan)
 const teachers = [
-  {
-    name: "Bunda Lina",
-    role: "Guru Kelas",
-    image: "https://via.placeholder.com/150x150?text=Yayasan",
-    expertise: "Spesialis Fun Learning & Literasi",
-  },
   {
     name: "Yanda Tri",
     role: "Kepala Sekolah",
     image: "https://via.placeholder.com/150x150?text=Kepala+Sekolah", 
-    expertise: "Pakar Pendidikan Anak Usia Dini (PAUD)",
+    expertise: "Kepala Sekolah",
+  },
+  {
+    name: "Bunda Isty",
+    role: "Guru Kelas",
+    image: bundaIstyImage,
+    expertise: "Bunda Kelompok Bermain",
+  },
+  {
+    name: "Bunda Nurul",
+    role: "Guru Kelas",
+    image: bundaNurulImage,
+    expertise: "Bunda Kelompok Bermain",
+  },
+  {
+    name: "Bunda Lina",
+    role: "Guru Kelas",
+    image: bundaLinaImage, 
+    expertise: "Bunda TK",
   },
   {
     name: "Bunda Susan",
     role: "Guru Kelas",
     image: "https://via.placeholder.com/150x150?text=Guru+Siti",
-    expertise: "Ahli Seni & Motorik Halus",
-  },
-  {
-    name: "Bunda Wid",
-    role: "Guru Kelas",
-    image: "https://via.placeholder.com/150x150?text=Guru+Bunga",
-    expertise: "Pendidik Muda Ceria",
+    expertise: "Bunda TK",
   },
   {
     name: "Bunda Naya",
     role: "Guru Kelas",
-    image: "https://via.placeholder.com/150x150?text=Guru+Dinda",
-    expertise: "Pakar Bahasa",
+    image: bundaNayaImage,
+    expertise: "Bunda TK",
   },
   {
     name: "Bunda Nur",
     role: "Guru Kelas",
-    image: "https://via.placeholder.com/150x150?text=Guru+Ahmad",
-    expertise: "Pengasuhan Anak",
-  },
-  {
-    name: "Bunda Isty",
-    role: "Guru Kelas",
-    image: "https://via.placeholder.com/150x150?text=Guru+Siska",
-    expertise: "Pengasuhan & Kesehatan",
-  },
-  {
-    name: "Bunda Nurul",
-    role: "Guru Kelas",
-    image: "https://via.placeholder.com/150x150?text=Admin",
-    expertise: "Administrasi Pendidikan",
+    image: bundaNurImage,
+    expertise: "Bunda TK",
   },
   {
     name: "Bunda Vita",
     role: "Guru Kelas",
     image: "https://via.placeholder.com/150x150?text=Admin",
-    expertise: "Administrasi Pendidikan",
+    expertise: "Bunda TK",
   },
   {
     name: "Bunda Rena",
     role: "Guru Kelas",
     image: "https://via.placeholder.com/150x150?text=Admin",
-    expertise: "Administrasi Pendidikan",
+    expertise: "Bunda TPA",
+  },
+    {
+    name: "Bunda Wid",
+    role: "Guru Kelas",
+    image: bundaWidImage,
+    expertise: "Bunda TPA",
   },
 ];
 

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import logoTK from '../assets/logo.png'; 
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,8 +19,12 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo/Nama TK */}
           <div className="flex-shrink-0">
-            <a href="#beranda" className="text-2xl font-bold text-pink-600">
-              TK Bintang 🌟
+            <a href="#beranda">
+              <img 
+                className="h-10 w-auto" 
+                src={logoTK} 
+                alt="Logo TK Bintang" 
+              />
             </a>
           </div>
 
